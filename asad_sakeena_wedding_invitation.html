@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asad Johar & Sakeena Zubairy — Wedding Invitation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Luxury Serif & Clean Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: '#FDFBF7',
+                        cream: '#F7F3EC',
+                        pearl: '#FFFFFF',
+                        blush: '#F9ECEE',
+                        dustyrose: '#D8A4B1',
+                        softpeach: '#FCEFEF',
+                        gold: '#D4AF37',
+                        'gold-light': '#EFE2B9',
+                        'gold-dark': '#997A15',
+                        sage: '#9CAF88',
+                        'sage-dark': '#6A7C57',
+                        charcoal: '#2C2A29'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styling for luxury invitation feel */
+        body {
+            background-color: #FDFBF7;
+            color: #2C2A29;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.35);
+        }
+        .gold-shadow {
+            box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.2);
+        }
+        /* Custom scratch card styling */
+        #scratch-canvas {
+            touch-action: none;
+            cursor: pointer;
+        }
+        /* Floral background watermark pattern */
+        .floral-bg {
+            background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="floral-bg antialiased selection:bg-dustyrose selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-ivory/90 backdrop-blur-md transition-all duration-300 border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="font-serif text-xl sm:text-2xl font-semibold tracking-wider text-charcoal flex items-center gap-2">
+                <span class="text-gold"><i class="fa-solid fa-spa text-lg"></i></span>
+                <span>Asad & Sakeena</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-sans text-xs uppercase tracking-widest font-medium text-charcoal/80">
+                <a href="#home" class="hover:text-gold transition-colors">Home</a>
+                <a href="#events" class="hover:text-gold transition-colors">Events</a>
+                <a href="#timeline" class="hover:text-gold transition-colors">Timeline</a>
+                <a href="#couple" class="hover:text-gold transition-colors">The Couple</a>
+                <a href="#countdown" class="hover:text-gold transition-colors">Countdown</a>
+                <a href="#venue" class="hover:text-gold transition-colors">Venue</a>
+                <a href="#rsvp" class="hover:text-gold transition-colors px-4 py-2 border border-gold/50 rounded-full bg-gold/10 hover:bg-gold hover:text-white transition-all">RSVP</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-charcoal p-2 focus:outline-none" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-ivory border-b border-gold/20 px-6 pt-4 pb-6 space-y-4 shadow-lg">
+            <a href="#home" class="block font-sans text-sm tracking-widest text-charcoal hover:text-gold py-2 border-b border-cream">Home</a>
+            <a href="#events" class="block font-sans text-sm tracking-widest text-charcoal hover:text-gold py-2 border-b border-cream">Events</a>
+            <a href="#timeline" class="block font-sans text-sm tracking-widest text-charcoal hover:text-gold py-2 border-b border-cream">Timeline</a>
+            <a href="#couple" class="block font-sans text-sm tracking-widest text-charcoal hover:text-gold py-2 border-b border-cream">The Couple</a>
+            <a href="#countdown" class="block font-sans text-sm tracking-widest text-charcoal hover:text-gold py-2 border-b border-cream">Countdown</a>
+            <a href="#venue" class="block font-sans text-sm tracking-widest text-charcoal hover:text-gold py-2 border-b border-cream">Venue</a>
+            <a href="#rsvp" class="block font-sans text-sm tracking-widest text-gold font-semibold py-2">RSVP</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-4 overflow-hidden">
+        <!-- Decorative background glow elements -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blush/40 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-gold/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <!-- Top Family line -->
+            <p class="font-sans text-xs sm:text-sm uppercase tracking-[0.25em] text-gold-dark mb-4 animate-fade-in">
+                Together with their families
+            </p>
+
+            <!-- Ornamental separator -->
+            <div class="flex items-center justify-center gap-4 my-6 text-gold">
+                <span class="h-[1px] w-16 sm:w-28 bg-gradient-to-r from-transparent to-gold"></span>
+                <i class="fa-solid fa-leaf text-sm rotate-45"></i>
+                <span class="h-[1px] w-16 sm:w-28 bg-gradient-to-l from-transparent to-gold"></span>
+            </div>
+
+            <!-- Couple Names -->
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-charcoal mb-4 leading-tight">
+                Asad Johar <span class="font-normal italic text-dustyrose">&amp;</span> Sakeena Zubairy
+            </h1>
+
+            <!-- Invitation Subtitle -->
+            <p class="font-sans text-sm sm:text-base uppercase tracking-[0.2em] text-charcoal/70 mb-8">
+                Invite You To Celebrate Their Wedding
+            </p>
+
+            <p class="font-serif italic text-lg sm:text-xl text-charcoal/80 max-w-xl mx-auto mb-12">
+                "Two hearts, one beautiful beginning, and a lifetime of memories to create."
+            </p>
+
+            <!-- Scratch-to-Reveal Date Card Container -->
+            <div class="max-w-md mx-auto bg-pearl/90 p-6 sm:p-8 rounded-2xl gold-border gold-shadow relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 text-blush opacity-60 text-9xl font-serif pointer-events-none">✿</div>
+                
+                <h3 class="font-serif text-xl sm:text-2xl text-charcoal font-medium mb-2">Our Wedding Date</h3>
+                <p class="font-sans text-xs text-charcoal/60 tracking-wider mb-6">SCRATCH OR SWIPE THE HEART BELOW TO REVEAL</p>
+
+                <div class="relative w-full h-36 sm:h-40 rounded-xl bg-gradient-to-br from-cream to-blush flex items-center justify-center overflow-hidden border border-gold/30">
+                    <!-- Hidden date content -->
+                    <div id="hidden-date-content" class="absolute inset-0 flex flex-col items-center justify-center text-center p-4 transition-opacity duration-700">
+                        <span class="text-xs uppercase tracking-widest text-gold-dark font-semibold mb-1">Save The Date</span>
+                        <span class="font-serif text-3xl sm:text-4xl font-bold text-charcoal tracking-wide">18 November 2026</span>
+                        <span class="font-sans text-xs text-sage-dark mt-1"><i class="fa-solid fa-sparkles"></i> With the Grace of Almighty Allah</span>
+                    </div>
+
+                    <!-- Scratch Canvas Overlay -->
+                    <canvas id="scratch-canvas" class="absolute inset-0 w-full h-full z-20 rounded-xl"></canvas>
+                </div>
+
+                <div class="mt-4 flex items-center justify-center gap-2 text-xs text-charcoal/50">
+                    <i class="fa-regular fa-hand-pointer"></i>
+                    <span id="scratch-instruction">Swipe or drag across the pink heart to uncover</span>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="mt-16">
+                <a href="#events" class="inline-flex flex-col items-center text-charcoal/60 hover:text-gold transition-colors">
+                    <span class="font-sans text-[10px] uppercase tracking-[0.3em] mb-2">Discover Events</span>
+                    <i class="fa-solid fa-chevron-down animate-bounce text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Events Section -->
+    <section id="events" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="font-sans text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold">Celebration Celebration</span>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-charcoal mt-2 mb-4">The Wedding Events</h2>
+            <div class="w-16 h-[1px] bg-gold mx-auto mb-4"></div>
+            <p class="font-sans text-sm text-charcoal/70">Join us in our joyous celebrations filled with love, laughter, and blessings.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            
+            <!-- Event 1: Haldi -->
+            <div class="bg-pearl rounded-2xl p-8 gold-border card-hover relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-50 rounded-bl-full pointer-events-none"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 bg-amber-50 text-amber-800 text-xs font-semibold uppercase tracking-wider rounded-full border border-amber-200">Event 01</span>
+                        <span class="text-amber-500 text-xl"><i class="fa-solid fa-sun text-amber-400"></i></span>
+                    </div>
+                    <h3 class="font-serif text-3xl font-bold text-charcoal mb-2">Haldi Ceremony</h3>
+                    <p class="font-sans text-sm text-charcoal/70 mb-6 leading-relaxed">
+                        An auspicious morning filled with turmeric blessings, joyous folk songs, and radiant yellow hues.
+                    </p>
+                </div>
+                
+                <div class="space-y-3 pt-6 border-t border-cream text-sm font-sans text-charcoal/80">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-calendar text-gold"></i>
+                        <span><strong>Date:</strong> 16 November 2026</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-clock text-gold"></i>
+                        <span><strong>Time:</strong> 11:00 AM onwards</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-gold"></i>
+                        <span><strong>Venue:</strong> Residence of Johar Family</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2: Mehendi -->
+            <div class="bg-pearl rounded-2xl p-8 gold-border card-hover relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-sage/10 rounded-bl-full pointer-events-none"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 bg-sage/15 text-sage-dark text-xs font-semibold uppercase tracking-wider rounded-full border border-sage/30">Event 02</span>
+                        <span class="text-sage-dark text-xl"><i class="fa-solid fa-seedling"></i></span>
+                    </div>
+                    <h3 class="font-serif text-3xl font-bold text-charcoal mb-2">Mehendi Night</h3>
+                    <p class="font-sans text-sm text-charcoal/70 mb-6 leading-relaxed">
+                        An evening of intricate henna designs, vibrant music, traditional ghazals, and celebratory feasts.
+                    </p>
+                </div>
+                
+                <div class="space-y-3 pt-6 border-t border-cream text-sm font-sans text-charcoal/80">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-calendar text-gold"></i>
+                        <span><strong>Date:</strong> 17 November 2026</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-clock text-gold"></i>
+                        <span><strong>Time:</strong> 04:00 PM onwards</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-gold"></i>
+                        <span><strong>Venue:</strong> Grand Lawn, Mannat Palace</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 3: Barat -->
+            <div class="bg-pearl rounded-2xl p-8 gold-border card-hover relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-blush/50 rounded-bl-full pointer-events-none"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 bg-blush text-dustyrose text-xs font-semibold uppercase tracking-wider rounded-full border border-dustyrose/30">Event 03</span>
+                        <span class="text-dustyrose text-xl"><i class="fa-solid fa-ring"></i></span>
+                    </div>
+                    <h3 class="font-serif text-3xl font-bold text-charcoal mb-2">Barat &amp; Nikah</h3>
+                    <p class="font-sans text-sm text-charcoal/70 mb-6 leading-relaxed">
+                        The grand arrival of the groom followed by the sacred solemnization of Nikah and joyous dinner.
+                    </p>
+                </div>
+                
+                <div class="space-y-3 pt-6 border-t border-cream text-sm font-sans text-charcoal/80">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-calendar text-gold"></i>
+                        <span><strong>Date:</strong> 18 November 2026</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-clock text-gold"></i>
+                        <span><strong>Time:</strong> 07:00 PM Nikah &amp; Feast</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-gold"></i>
+                        <span><strong>Venue:</strong> Mannat Palace, Saharanpur</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 4: Reception -->
+            <div class="bg-pearl rounded-2xl p-8 gold-border card-hover relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-bl-full pointer-events-none"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 bg-gold/15 text-gold-dark text-xs font-semibold uppercase tracking-wider rounded-full border border-gold/30">Event 04</span>
+                        <span class="text-gold-dark text-xl"><i class="fa-solid fa-champagne-glasses"></i></span>
+                    </div>
+                    <h3 class="font-serif text-3xl font-bold text-charcoal mb-2">Walima Reception</h3>
+                    <p class="font-sans text-sm text-charcoal/70 mb-6 leading-relaxed">
+                        A grand wedding reception celebrating the newly wedded couple with family, friends, and exquisite dining.
+                    </p>
+                </div>
+                
+                <div class="space-y-3 pt-6 border-t border-cream text-sm font-sans text-charcoal/80">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-calendar text-gold"></i>
+                        <span><strong>Date:</strong> 19 November 2026</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-clock text-gold"></i>
+                        <span><strong>Time:</strong> 07:30 PM Onwards</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-gold"></i>
+                        <span><strong>Venue:</strong> Mannat Palace Banquet Hall</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Wedding Timeline Section -->
+    <section id="timeline" class="py-20 bg-cream/60 border-y border-gold/20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="font-sans text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold">Journey of Love</span>
+                <h2 class="font-serif text-4xl font-bold text-charcoal mt-2 mb-4">Wedding Timeline</h2>
+                <div class="w-16 h-[1px] bg-gold mx-auto"></div>
+            </div>
+
+            <!-- Vertical Timeline Container -->
+            <div class="relative border-l-2 border-gold/30 ml-4 sm:ml-auto sm:max-w-xl space-y-12">
+                
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-pearl border-2 border-gold flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                    </div>
+                    <span class="text-xs font-sans font-semibold tracking-wider text-amber-800 uppercase">16 Nov 2026</span>
+                    <h3 class="font-serif text-2xl font-bold text-charcoal">Haldi Ceremony</h3>
+                    <p class="text-sm text-charcoal/70 mt-1">Joyful morning rituals, turmeric application, and festive traditional songs.</p>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-pearl border-2 border-gold flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                    </div>
+                    <span class="text-xs font-sans font-semibold tracking-wider text-sage-dark uppercase">17 Nov 2026</span>
+                    <h3 class="font-serif text-2xl font-bold text-charcoal">Mehendi Night</h3>
+                    <p class="text-sm text-charcoal/70 mt-1">Application of intricate henna, music, cultural performances, and dinner.</p>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-pearl border-2 border-gold flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                    </div>
+                    <span class="text-xs font-sans font-semibold tracking-wider text-dustyrose uppercase">18 Nov 2026</span>
+                    <h3 class="font-serif text-2xl font-bold text-charcoal">Barat &amp; Nikah</h3>
+                    <p class="text-sm text-charcoal/70 mt-1">The grand royal procession, sacred Nikah ceremony, and wedding banquet.</p>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-pearl border-2 border-gold flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                    </div>
+                    <span class="text-xs font-sans font-semibold tracking-wider text-gold-dark uppercase">19 Nov 2026</span>
+                    <h3 class="font-serif text-2xl font-bold text-charcoal">Walima Reception</h3>
+                    <p class="text-sm text-charcoal/70 mt-1">Grand reception banquet hosting cherished family and esteemed guests.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Couple Section -->
+    <section id="couple" class="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+        <span class="font-sans text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold">The Bride &amp; Groom</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-charcoal mt-2 mb-6">Asad &amp; Sakeena</h2>
+        <div class="w-16 h-[1px] bg-gold mx-auto mb-12"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Groom Card -->
+            <div class="bg-pearl p-8 rounded-2xl gold-border shadow-sm relative">
+                <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-blush flex items-center justify-center text-dustyrose border border-gold/30">
+                    <i class="fa-solid fa-mars text-lg"></i>
+                </div>
+                <h3 class="font-serif text-3xl font-bold text-charcoal mt-4 mb-2">Asad Johar</h3>
+                <p class="font-sans text-xs uppercase tracking-widest text-gold-dark font-semibold mb-4">The Groom</p>
+                <div class="w-10 h-[1px] bg-gold/40 mx-auto mb-4"></div>
+                <p class="font-sans text-xs text-charcoal/60 uppercase tracking-wider mb-2">Son of</p>
+                <p class="font-serif text-lg text-charcoal font-medium">Mohammad Khalid Johar <br>&amp; Asma Johar</p>
+            </div>
+
+            <!-- Bride Card -->
+            <div class="bg-pearl p-8 rounded-2xl gold-border shadow-sm relative">
+                <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-blush flex items-center justify-center text-dustyrose border border-gold/30">
+                    <i class="fa-solid fa-venus text-lg"></i>
+                </div>
+                <h3 class="font-serif text-3xl font-bold text-charcoal mt-4 mb-2">Sakeena Zubairy</h3>
+                <p class="font-sans text-xs uppercase tracking-widest text-gold-dark font-semibold mb-4">The Bride</p>
+                <div class="w-10 h-[1px] bg-gold/40 mx-auto mb-4"></div>
+                <p class="font-sans text-xs text-charcoal/60 uppercase tracking-wider mb-2">Daughter of</p>
+                <p class="font-serif text-lg text-charcoal font-medium">Mohammad Anees Zubairy <br>&amp; Shabana Zubairy</p>
+            </div>
+
+        </div>
+
+        <div class="mt-16 max-w-xl mx-auto p-8 rounded-2xl bg-gradient-to-br from-cream to-blush/30 border border-gold/20">
+            <p class="font-serif italic text-xl text-charcoal/90 leading-relaxed">
+                "Two hearts, one beautiful journey, and a lifetime of memories waiting to be made."
+            </p>
+        </div>
+    </section>
+
+    <!-- Live Countdown Section -->
+    <section id="countdown" class="py-20 bg-cream/70 border-y border-gold/20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="font-sans text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold">Counting Every Moment</span>
+            <h2 class="font-serif text-4xl font-bold text-charcoal mt-2 mb-6">The Big Day Awaits</h2>
+            <div class="w-16 h-[1px] bg-gold mx-auto mb-10"></div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-2xl mx-auto">
+                <div class="bg-pearl p-6 rounded-xl gold-border shadow-sm">
+                    <div id="days" class="font-serif text-4xl sm:text-5xl font-bold text-charcoal mb-1">00</div>
+                    <div class="font-sans text-xs uppercase tracking-widest text-gold-dark font-medium">Days</div>
+                </div>
+                <div class="bg-pearl p-6 rounded-xl gold-border shadow-sm">
+                    <div id="hours" class="font-serif text-4xl sm:text-5xl font-bold text-charcoal mb-1">00</div>
+                    <div class="font-sans text-xs uppercase tracking-widest text-gold-dark font-medium">Hours</div>
+                </div>
+                <div class="bg-pearl p-6 rounded-xl gold-border shadow-sm">
+                    <div id="minutes" class="font-serif text-4xl sm:text-5xl font-bold text-charcoal mb-1">00</div>
+                    <div class="font-sans text-xs uppercase tracking-widest text-gold-dark font-medium">Minutes</div>
+                </div>
+                <div class="bg-pearl p-6 rounded-xl gold-border shadow-sm">
+                    <div id="seconds" class="font-serif text-4xl sm:text-5xl font-bold text-charcoal mb-1">00</div>
+                    <div class="font-sans text-xs uppercase tracking-widest text-gold-dark font-medium">Seconds</div>
+                </div>
+            </div>
+            <p class="font-sans text-xs text-charcoal/60 mt-6 tracking-wider">UNTIL ASAD &amp; SAKEENA'S NIKAH ON 18 NOVEMBER 2026</p>
+        </div>
+    </section>
+
+    <!-- Venue & Location Section -->
+    <section id="venue" class="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="font-sans text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold">Celebration Venue</span>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-charcoal mt-2 mb-4">Mannat Palace</h2>
+            <div class="w-16 h-[1px] bg-gold mx-auto mb-4"></div>
+            <p class="font-sans text-sm text-charcoal/70">Ambala Road, Saharanpur, Uttar Pradesh</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            
+            <!-- Venue Details Card -->
+            <div class="bg-pearl p-8 rounded-2xl gold-border space-y-6">
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-charcoal mb-1">Mannat Palace</h3>
+                    <p class="font-sans text-xs uppercase tracking-wider text-gold-dark font-semibold">Primary Wedding Venue</p>
+                </div>
+                <p class="font-sans text-sm text-charcoal/70 leading-relaxed">
+                    A magnificent luxury palace venue offering opulent banquet halls, lush green lawns, and spacious amenities for our wedding celebrations.
+                </p>
+                <div class="pt-4 border-t border-cream space-y-3 text-sm text-charcoal/80 font-sans">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-map-pin text-gold mt-1"></i>
+                        <span>Ambala Road, Saharanpur, Uttar Pradesh, India</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://maps.google.com/?q=Mannat+Palace+Ambala+Road+Saharanpur" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center w-full gap-2 px-6 py-3 bg-charcoal text-pearl rounded-xl font-sans text-xs uppercase tracking-widest font-semibold hover:bg-gold-dark transition-colors">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+
+            <!-- Google Maps Embed -->
+            <div class="lg:col-span-2 h-[400px] bg-pearl rounded-2xl gold-border overflow-hidden shadow-sm p-2">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3463.585526362799!2d77.545!3d29.965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDU3JzU0LjAiTiA3N8KwMzInNDguMCJF!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; border-radius: 0.75rem;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mannat Palace Location Map">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="py-24 bg-cream/50 border-t border-gold/20 px-4">
+        <div class="max-w-xl mx-auto bg-pearl p-8 sm:p-12 rounded-3xl gold-border gold-shadow relative">
+            <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-blush border border-gold/40 flex items-center justify-center text-gold text-2xl font-serif">
+                ✿
+            </div>
+
+            <div class="text-center mt-4 mb-8">
+                <span class="font-sans text-xs uppercase tracking-[0.3em] text-gold-dark font-semibold">Be Our Guest</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-charcoal mt-1 mb-2">Kindly RSVP</h2>
+                <div class="w-12 h-[1px] bg-gold mx-auto mb-3"></div>
+                <p class="font-sans text-xs sm:text-sm text-charcoal/70">Please let us know if you will be gracing us with your presence.</p>
+            </div>
+
+            <!-- RSVP Form (ONLY 2 FIELDS) -->
+            <form id="rsvp-form" class="space-y-6">
+                <div>
+                    <label for="guest-name" class="block font-sans text-xs uppercase tracking-widest text-charcoal/80 font-semibold mb-2">Guest Name</label>
+                    <input type="text" id="guest-name" name="guestName" required 
+                           class="w-full px-4 py-3 bg-ivory rounded-xl border border-gold/30 focus:outline-none focus:border-gold font-sans text-sm text-charcoal"
+                           placeholder="Enter your full name">
+                </div>
+
+                <div>
+                    <label for="guest-count" class="block font-sans text-xs uppercase tracking-widest text-charcoal/80 font-semibold mb-2">Number of Guests</label>
+                    <input type="number" id="guest-count" name="guestCount" min="1" max="10" value="1" required 
+                           class="w-full px-4 py-3 bg-ivory rounded-xl border border-gold/30 focus:outline-none focus:border-gold font-sans text-sm text-charcoal">
+                </div>
+
+                <button type="submit" 
+                        class="w-full py-4 bg-charcoal text-pearl rounded-xl font-sans text-xs uppercase tracking-widest font-semibold hover:bg-gold-dark transition-all shadow-md">
+                    Confirm Attendance
+                </button>
+            </form>
+
+            <!-- Success Confirmation Message Container (Hidden by default) -->
+            <div id="rsvp-success" class="hidden text-center py-8 space-y-4">
+                <div class="w-16 h-16 bg-sage/20 text-sage-dark rounded-full flex items-center justify-center mx-auto text-2xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-charcoal">Thank You!</h3>
+                <p class="font-sans text-sm text-charcoal/80 leading-relaxed max-w-sm mx-auto">
+                    "Thank you for celebrating this beautiful occasion with us."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-ivory border-t border-gold/20 text-center px-4">
+        <div class="max-w-xl mx-auto space-y-4">
+            <h3 class="font-serif text-3xl font-bold text-charcoal">Asad Johar &amp; Sakeena Zubairy</h3>
+            <div class="flex items-center justify-center gap-3 text-gold">
+                <span class="h-[1px] w-12 bg-gold/50"></span>
+                <i class="fa-solid fa-leaf text-xs rotate-45"></i>
+                <span class="h-[1px] w-12 bg-gold/50"></span>
+            </div>
+            <p class="font-serif italic text-base text-charcoal/70">
+                "With love, joy, and the blessings of our families."
+            </p>
+            <p class="font-sans text-[10px] uppercase tracking-[0.25em] text-charcoal/40 pt-4">
+                © 2026 Asad &amp; Sakeena Wedding. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Scratch-to-Reveal Date Logic
+        const canvas = document.getElementById('scratch-canvas');
+        const ctx = canvas.getContext('2d');
+        const instruction = document.getElementById('scratch-instruction');
+        let isScratched = false;
+
+        function initScratchCard() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            // Draw scratchable overlay (soft blush rose gradient)
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#E8B4B8');
+            gradient.addColorStop(1, '#D8A4B1');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Add decorative text on scratch card
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 16px "Montserrat", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('❤ Scratch Here to Reveal Date ❤', canvas.width / 2, canvas.height / 2);
+        }
+
+        window.addEventListener('load', initScratchCard);
+        window.addEventListener('resize', () => {
+            if (!isScratched) initScratchCard();
+        });
+
+        let isDrawing = false;
+
+        function scratch(e) {
+            if (!isDrawing || isScratched) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = (e.clientX || e.touches[0].clientX) - rect.left;
+            const y = (e.clientY || e.touches[0].clientY) - rect.top;
+
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.beginPath();
+            ctx.arc(x, y, 30, 0, Math.PI * 2, false);
+            ctx.fill();
+
+            checkRevealPercentage();
+        }
+
+        function checkRevealPercentage() {
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const pixels = imageData.data;
+            let transparentPixels = 0;
+
+            for (let i = 3; i < pixels.length; i += 4) {
+                if (pixels[i] < 128) {
+                    transparentPixels++;
+                }
+            }
+
+            const percentage = (transparentPixels / (pixels.length / 4)) * 100;
+            if (percentage > 35 && !isScratched) {
+                isScratched = true;
+                // Fade out canvas completely
+                canvas.style.transition = 'opacity 0.6s ease';
+                canvas.style.opacity = '0';
+                setTimeout(() => {
+                    canvas.style.display = 'none';
+                    instruction.textContent = "✨ Date successfully revealed!";
+                }, 600);
+            }
+        }
+
+        canvas.addEventListener('mousedown', () => isDrawing = true);
+        canvas.addEventListener('mousemove', scratch);
+        window.addEventListener('mouseup', () => isDrawing = false);
+
+        canvas.addEventListener('touchstart', (e) => { isDrawing = true; scratch(e); });
+        canvas.addEventListener('touchmove', (e) => { scratch(e); });
+        window.addEventListener('touchend', () => isDrawing = false);
+
+        // 3. Live Countdown Timer to 18 November 2026
+        const weddingDate = new Date('November 18, 2026 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 4. RSVP Form Submission Handler (2 Fields)
+        const rsvpForm = document.getElementById('rsvp-form');
+        const rsvpSuccess = document.getElementById('rsvp-success');
+
+        rsvpForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            rsvpForm.style.display = 'none';
+            rsvpSuccess.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
